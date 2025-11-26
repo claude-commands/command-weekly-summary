@@ -14,7 +14,7 @@ ln -s <clone-path>/command-weekly-summary/weekly-summary.md ~/.claude/commands/w
 
 ## Usage
 
-```
+```text
 /weekly-summary      # Current week (since Monday)
 /weekly-summary 1    # Last week
 /weekly-summary 2    # Two weeks ago

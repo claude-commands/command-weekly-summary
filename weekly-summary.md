@@ -12,11 +12,13 @@ Generate a summary of this week's git activity.
 **Usage:** `/weekly-summary [weeks-back]`
 
 **Examples:**
+
 - `/weekly-summary` - Current week (since Monday)
 - `/weekly-summary 1` - Last week
 - `/weekly-summary 2` - Two weeks ago
 
 **Workflow:**
+
 1. Gather commits from the specified week
 2. Aggregate PRs merged and reviewed
 3. Calculate productivity metrics
@@ -39,6 +41,7 @@ Generate a weekly work summary for the specified week.
 ## Steps
 
 1. **Calculate Date Range**
+
    ```bash
    # Get start of week (Monday)
    # For current week: this Monday
@@ -46,15 +49,16 @@ Generate a weekly work summary for the specified week.
 
    # Example: commits from Monday to Sunday
    git log --since="2024-01-15" --until="2024-01-22" --author="<user>"
-   ```
+   ```text
 
 2. **Gather Commits Across Repos**
 
    If in a multi-repo directory:
+
    ```bash
    # Find all git repos and aggregate commits
    find . -name ".git" -type d -exec dirname {} \;
-   ```
+   ```text
 
    For each repo, collect:
    - Commit count
@@ -75,14 +79,14 @@ Generate a weekly work summary for the specified week.
 
 4. **Calculate Metrics**
 
-   ```
+   ```text
    Commits: 23
    PRs Merged: 4
    Lines Added: 1,245
    Lines Removed: 387
    Net Change: +858 lines
    Files Touched: 34
-   ```
+   ```text
 
 5. **Identify Key Accomplishments**
 
@@ -154,7 +158,7 @@ Generate a weekly work summary for the specified week.
 
    - In Progress: API documentation
    - Upcoming: Performance optimization sprint
-   ```
+   ```text
 
 7. **Format for Different Audiences**
 
@@ -172,6 +176,7 @@ Generate a weekly work summary for the specified week.
 ## Multi-Repo Support
 
 If run in a parent directory containing multiple repos:
+
 - Scan all subdirectories for `.git`
 - Aggregate commits from all repos
 - Group summary by repo name
